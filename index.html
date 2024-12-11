@@ -17,8 +17,47 @@
             align-items: center;
             height: 100vh;
         }
-        /* 其他样式保持不变 */
-
+        h1 {
+            font-size: 2.8em;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+        }
+        .email {
+            font-size: 1em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .intro-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .intro-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .intro-photo {
+            height: auto;
+            max-height: 180px;
+            width: auto;
+            border-radius: 10px;
+        }
+        .intro-section {
+            font-size: 1.4em;
+            text-align: left;
+            max-width: 600px;
+            color: #000;
+            margin-left: 20px;
+            flex-grow: 1;
+        }
         .abstract-container {
             display: flex;
             justify-content: space-between;
@@ -34,12 +73,11 @@
         }
         .abstract-pdf {
             flex: 0 0 300px; /* 不伸展，不收缩，基础宽度300px */
-            aspect-ratio: 1.41; /* 保持PDF的宽高比为1.41:1 */
             margin-left: 20px; /* 与文本的间距 */
         }
         .abstract-pdf iframe {
             width: 100%;
-            height: 100%;
+            height: auto; /* 自动高度以保持比例 */
             border: none; /* 去除边框 */
         }
     </style>
@@ -48,16 +86,29 @@
     <h1>Hanzhe Liang</h1>
     <div class="email">2023362051@email.szu.edu.cn</div>
 
-    <!-- 其他内容保持不变 -->
+    <div class="intro-container">
+        <div class="intro-content">
+            <img src="cat.jpg" alt="My Photo" class="intro-photo">
+            <div class="intro-section">
+                <strong class="intro-title">Introduction: </strong>
+                <!-- 简介内容 -->
+            </div>
+        </div>
+    </div>
+
+    <h2>Publications</h2>
+    <ul>
+        <li><span>2024/12/10</span> AAAI 2025 Accepted - <em>"Look Inside for More: Internal Spatial Modality Perception for 3D Anomaly Detection"</em> <a href="https://openreview.net/forum?id=fHJLvFx7pE&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DAAAI.org%2F2025%2FConference%2FAuthors%23your-submissions)" target="_blank">[OpenReview]</a></li>
+    </ul>
 
     <div class="abstract-container">
         <div class="abstract-text">
             <p>
-                3D anomaly detection has recently become a significant focus in computer vision. Several advanced methods have achieved satisfying anomaly detection performance. However, they typically concentrate on the external structure of 3D samples and struggle to leverage the internal information embedded within samples. Inspired by the basic intuition of why not look inside for more, we introduce a straightforward method named Internal Spatial Modality Perception~(ISMP) to explore the feature representation from internal views fully. Specifically, our proposed ISMP consists of a critical perception module, Spatial Insight Engine~(SIE), which abstracts complex internal information of point clouds into essential global features. Besides, to better align structural information with point data, we propose an enhanced key point feature extraction module for amplifying spatial structure feature representation. Simultaneously, a novel feature filtering module is incorporated to reduce noise and redundant features for further aligning precise spatial structure. Extensive experiments validate the effectiveness of our proposed method, achieving object-level and pixel-level AUROC improvements of 4.2% and 13.1%, respectively, on the Real3D-AD benchmarks. Note that the strong generalization ability of SIE has been theoretically proven and is verified in both classification and segmentation tasks.
+                <strong>Abstract:</strong> 3D anomaly detection has recently become a significant focus in computer vision. Several advanced methods have achieved satisfying anomaly detection performance. However, they typically concentrate on the external structure of 3D samples and struggle to leverage the internal information embedded within samples. Inspired by the basic intuition of why not look inside for more, we introduce a straightforward method named Internal Spatial Modality Perception~(ISMP) to explore the feature representation from internal views fully. Specifically, our proposed ISMP consists of a critical perception module, Spatial Insight Engine~(SIE), which abstracts complex internal information of point clouds into essential global features. Besides, to better align structural information with point data, we propose an enhanced key point feature extraction module for amplifying spatial structure feature representation. Simultaneously, a novel feature filtering module is incorporated to reduce noise and redundant features for further aligning precise spatial structure. Extensive experiments validate the effectiveness of our proposed method, achieving object-level and pixel-level AUROC improvements of 4.2% and 13.1%, respectively, on the Real3D-AD benchmarks. Note that the strong generalization ability of SIE has been theoretically proven and is verified in both classification and segmentation tasks.
             </p>
         </div>
         <div class="abstract-pdf">
-            <iframe src="AAAI.pdf" type="application/pdf" allowfullscreen></iframe>
+            <iframe src="AAAI25.pdf" type="application/pdf" allowfullscreen></iframe>
         </div>
     </div>
 </body>
