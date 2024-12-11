@@ -17,102 +17,30 @@
             align-items: center;
             height: 100vh;
         }
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            text-align: center;
-            color: black;
-        }
-        .email {
-            font-size: 1em;
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .intro-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .intro-content {
+        /* 其他样式保持不变 */
+
+        .abstract-container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            max-width: 1000px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .intro-photo {
-            height: auto;
-            max-height: 180px;
-            width: auto;
-            border-radius: 10px;
-        }
-        .intro-section {
-            font-size: 1.4em;
-            text-align: left;
-            max-width: 600px;
-            color: #000;
-            margin-left: 20px;
-            flex-grow: 1;
-        }
-        .bold {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .intro-title {
-            font-weight: bold;
-            color: #000;
-        }
-        .seeking {
-            color: red;
-            font-size: 1.2em;
-            text-align: left;
-            max-width: 600px;
-            flex-grow: 1;
             margin-top: 20px;
-        }
-        h2 {
-            font-size: 2em;
-            font-weight: bold;
-            margin-top: 40px;
-            text-align: center;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.1em;
-        }
-        li {
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        li span {
-            font-weight: bold;
-        }
-        .horizontal-line {
             width: 100%;
-            max-width: 600px;
-            border-top: 1px solid #333;
-            margin: 10px 0;
+            max-width: 1200px; /* 设置最大宽度 */
         }
-        .abstract-container {
-            display: flex;
-            flex-direction: column; /* 修改为垂直布局 */
-            align-items: center; /* 垂直居中 */
-            margin-top: 20px;
-        }
-        .abstract-text, .abstract-image {
-            width: 100%; /* 设置为100%以填满容器 */
+        .abstract-text {
+            flex: 1; /* 占据剩余空间 */
             max-width: 600px; /* 最大宽度限制 */
-            margin-bottom: 20px; /* 添加底部间距 */
+            margin-right: 20px; /* 与PDF的间距 */
         }
-        .abstract-image img {
-            width: 100%; /* 使图片宽度适应容器 */
-            height: auto; /* 保持图片比例 */
-            border-radius: 10px; /* 圆角 */
+        .abstract-pdf {
+            flex: 0 0 300px; /* 不伸展，不收缩，基础宽度300px */
+            aspect-ratio: 1.41; /* 保持PDF的宽高比为1.41:1 */
+            margin-left: 20px; /* 与文本的间距 */
+        }
+        .abstract-pdf iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* 去除边框 */
         }
     </style>
 </head>
@@ -120,30 +48,16 @@
     <h1>Hanzhe Liang</h1>
     <div class="email">2023362051@email.szu.edu.cn</div>
 
-    <div class="intro-container">
-        <div class="intro-content">
-            <img src="cat.jpg" alt="My Photo" class="intro-photo">
-            <div class="intro-section">
-                <strong class="intro-title">Introduction: </strong>
-                My name is Liang Hanzhe, and I am currently studying for a bachelor's degree in Shenzhen University. I have a double bachelor's degree in both Science and Management. My current research focuses on 3D representation learning and anomaly detection. I was admitted to the Institute of FinTech of Shenzhen University in July 2023 and joined the Institute of Computer Vision, Shenzhen University in April 2024. I am a reviewer for the ICLR25 conference.
-            </div>
-        </div>
-    </div>
-
-    <h2>Publications</h2>
-    <ul>
-        <li><span>2024/12/10</span> AAAI 2025 Accepted - <em>"Look Inside for More: Internal Spatial Modality Perception for 3D Anomaly Detection"</em> <a href="https://openreview.net/forum?id=fHJLvFx7pE&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DAAAI.org%2F2025%2FConference%2FAuthors%23your-submissions)" target="_blank">[OpenReview]</a></li>
-    </ul>
+    <!-- 其他内容保持不变 -->
 
     <div class="abstract-container">
-        <div class="abstract-image">
-            <img src="AAAI.jpg" alt="Abstract Image" class="intro-photo">
-        </div>
         <div class="abstract-text">
-            <h2 style="color: red;">Abstract:</h2>
             <p>
                 3D anomaly detection has recently become a significant focus in computer vision. Several advanced methods have achieved satisfying anomaly detection performance. However, they typically concentrate on the external structure of 3D samples and struggle to leverage the internal information embedded within samples. Inspired by the basic intuition of why not look inside for more, we introduce a straightforward method named Internal Spatial Modality Perception~(ISMP) to explore the feature representation from internal views fully. Specifically, our proposed ISMP consists of a critical perception module, Spatial Insight Engine~(SIE), which abstracts complex internal information of point clouds into essential global features. Besides, to better align structural information with point data, we propose an enhanced key point feature extraction module for amplifying spatial structure feature representation. Simultaneously, a novel feature filtering module is incorporated to reduce noise and redundant features for further aligning precise spatial structure. Extensive experiments validate the effectiveness of our proposed method, achieving object-level and pixel-level AUROC improvements of 4.2% and 13.1%, respectively, on the Real3D-AD benchmarks. Note that the strong generalization ability of SIE has been theoretically proven and is verified in both classification and segmentation tasks.
             </p>
+        </div>
+        <div class="abstract-pdf">
+            <iframe src="AAAI.pdf" type="application/pdf" allowfullscreen></iframe>
         </div>
     </div>
 </body>
