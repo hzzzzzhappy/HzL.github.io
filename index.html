@@ -66,16 +66,9 @@
             width: 100%;
             max-width: 1200px; /* 设置最大宽度 */
         }
-        .abstract-text {
-            flex: 1; /* 占据剩余空间 */
-            max-width: 600px; /* 最大宽度限制 */
-            margin-right: 20px; /* 与图片的间距 */
-        }
-        .abstract-image {
-            flex: 0 0 300px; /* 固定宽度 */
-            margin-left: 20px; /* 与文本的间距 */
-            max-height: 400px; /* 图片的最大高度 */
-            overflow: hidden; /* 隐藏超出部分 */
+        .abstract-text, .abstract-image {
+            flex: 1; /* 各占50%的宽度 */
+            margin: 0 10px; /* 两边间距 */
         }
         .abstract-image img {
             width: 100%; /* 图片宽度适应容器 */
