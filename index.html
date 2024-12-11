@@ -69,17 +69,16 @@
         .abstract-text {
             flex: 1; /* 占据剩余空间 */
             max-width: 600px; /* 最大宽度限制 */
-            margin-right: 20px; /* 与PDF的间距 */
+            margin-right: 20px; /* 与图片的间距 */
         }
-        .abstract-pdf {
-            flex: 0 0 300px; /* 不伸展，不收缩，基础宽度300px */
+        .abstract-image {
+            flex: 0 0 auto; /* 不伸展，不收缩，自动宽度 */
             margin-left: 20px; /* 与文本的间距 */
         }
-        .abstract-pdf iframe {
-            width: 100%;
-            height: auto; /* 自动高度以保持比例 */
-            border: none; /* 去除边框 */
-        }
+        .abstract-image img {
+            width: 100%; /* 图片宽度适应容器 */
+            height: auto; /* 图片高度自动 */
+            border-radius: 10px; /* 圆角 */
     </style>
 </head>
 <body>
