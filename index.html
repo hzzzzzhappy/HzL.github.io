@@ -72,13 +72,14 @@
             margin-right: 20px; /* 与图片的间距 */
         }
         .abstract-image {
-            flex: 0 0 auto; /* 不伸展，不收缩，自动宽度 */
+            flex: 0 0 300px; /* 固定宽度 */
             margin-left: 20px; /* 与文本的间距 */
+            max-height: 400px; /* 图片的最大高度 */
+            overflow: hidden; /* 隐藏超出部分 */
         }
         .abstract-image img {
             width: 100%; /* 图片宽度适应容器 */
-            height: 100%; /* 图片高度适应容器 */
-            object-fit: contain; /* 保持图片比例，图片完整显示 */
+            height: auto; /* 图片高度自动 */
             border-radius: 10px; /* 圆角 */
         }
     </style>
